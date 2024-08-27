@@ -1,0 +1,322 @@
+//*********************PART4 out of 5*************************
+//***************************************************
+//What is output of this program?
+/*
+#include <stdio.h>
+int main()
+{
+  unsigned int i =50;
+  while(i++ !=0);
+  printf("%d\n", i);
+  return 0;
+}
+*/
+
+//***************************************************
+//What is output of this program?
+/*
+#include <stdio.h>
+int main()
+{
+  int x=3;
+  if(x==2); x=0;
+  if(x==3) x++;
+  else x +=2;
+  printf("x=%d", x);
+  return 0;
+}
+*/
+
+//***************************************************
+//matrices //pyramid
+/*
+#include <stdio.h>
+int main()
+{
+int n,i,j;
+printf("how many rows you want in your pyramid?\n");
+scanf("%d", &n);
+  for(i=1; i<=n; i++)
+  {
+    for(j = 1; j<=2*n-1; j++)
+    {
+     if (j>=n-(i-1) && j<=n+(i-1))
+     {
+      printf("*");
+     }
+     else
+     {
+      printf(" ");
+     }
+    }
+    printf("\n");
+  } 
+}
+*/
+
+//***************************************************
+//matrices //pyramid
+/*
+#include <stdio.h>  
+//#include <conio.h>  
+void main()  
+{  
+    int i, j, n, k;  
+    printf ("Enter a number to define the columns\n");  
+    scanf("%d", &n);    
+    for (i = 1; i <= n; i++)   
+    {  
+        for (j = i; j < n; j++)   
+        {  
+            printf("");   
+        }  
+        for (k = 1; k <= i; k++)  
+        {  
+            printf("*");
+        }  
+        printf ("\n");   
+    }  
+   for (i = 1; i <= n; ++i)   
+    {  
+        for (j = 2; j <= i; j++)  
+        {  
+            printf("");   
+        }  
+        for (k = i; k <= n; k++)  
+        {  
+            printf("*");
+        }  
+        printf ("\n");   
+    }  
+}  
+*/
+
+//***************************************************
+//Palindrome 151 252 1331 9669 01010 1101011
+/*
+#include <stdio.h>
+int main()
+{
+int n, result=0, q, rem;
+printf("please enter the number:");
+scanf("%d", &n);
+q=n;
+while(q!=0)
+{
+  rem=q%10;
+  result = result*10+rem;
+  q=q/10;
+}
+if(result==n)
+printf("its a palindrome");
+else
+printf("no, it is not a palindrome");
+return 0;
+}
+*/
+
+//***************************************************
+//is it an Armstrong number?
+/*
+#include<stdio.h>
+int main ()
+{
+  int number, count=0, result=0, mul=1, cnt, rem;
+  printf("please enter your number");
+  scanf("%d", &number);
+  int q=number;
+while(q!=0)
+   {
+    q=q/10;
+    count++;
+   }
+cnt=count;
+q=number;
+while(q!=0)
+     {
+       rem=q%10;
+       while(cnt!=0)
+     {
+       mul=mul*rem;
+       cnt--;    
+     }
+  result = result+mul;
+  cnt=count;
+  q=q/10;
+  mul=1;
+    }
+if (result==number)
+printf("%d is an armstrong number", number);
+else
+ printf("%d is not armstrong number", number);
+ return 0;
+}
+*/
+
+//***************************************************
+// Is it your number is strong number or not?
+/*
+#include <stdio.h>
+int main()
+{
+  int n, q, rem, fact=1, i, result=0;
+  printf("please enter your number");
+  scanf("%d", &n);
+  q=n;
+  while(q!=0)
+  {
+    rem=q%10;
+    for(i=1; i<=rem; i++)
+    {
+      fact = fact*i;
+    }
+    result = result+ fact;
+    fact = 1;
+    q=q/10;
+  }
+  if (result==n)
+  printf("%d is a string number", n);
+  else
+  printf("%d is not a strong number", n);
+  return 0;
+  }
+*/
+
+//***************************************************
+// check if your number is prime
+/*
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  int x; 
+  int i, val1, val2, count=0;
+  printf("please enter your number only positive integers");
+  scanf("%d", &x);
+
+  val1 = ceil(sqrt(x));
+  val2=x;
+for (i=2; i<=val1; i++)
+{
+  if(val2%i==0)
+  count=1;
+}
+if ((count ==0 && val2 !=1) || val2 ==2 || val2 ==3)
+printf("%d is a prime number", val2);
+else
+printf("%d is not a prime number", val2);
+return 0;
+}
+*/
+
+//***************************************************
+// Add two numbers without plus oprator! only positive number.
+/*
+#include <stdio.h>
+int main ()
+{
+int x,y;
+printf("inter your two numbers you want to add");
+scanf("%d %d", &x, &y);
+while(y !=0)
+{
+  x++;
+  y--;
+}
+printf("sum of two values is %d", x);
+return 0;
+}
+*/
+
+//***************************************************
+// Add two numbers without plus oprator! positive and negetive number.
+/*
+#include <stdio.h>
+int main ()
+{
+int x,y;
+printf("inter your two numbers you want to add");
+scanf("%d %d", &x, &y);
+if (y>0)
+{
+  while (y !=0)
+  {
+  x++;
+  y--; 
+  }
+}
+else if(y<0)
+{
+  x--;
+  y++;
+}
+printf("sum of two values is %d", x);
+return 0;
+}
+*/
+
+//***************************************************
+// Add two numbers without plus oprator HALF Adder method.
+/*
+#include <stdio.h>
+int main ()
+{
+int sum, carry, a, b;
+printf("enter the two numbers");
+scanf("%d %d", &a, &b);
+while (b!=0)
+{
+  sum=a^b;
+  carry= (a&b)<<1;
+  a=sum;
+  b=carry;
+}
+printf("Sum of two numbers is: %d", sum);
+return 0;
+}
+
+//***************************************************
+// Fibonacci series in C//
+/*
+#include <stdio.h>
+int main ()
+{
+int a, b, result, n, i;
+printf ("enter the number of terms");
+scanf("%d", &n);
+a=0;
+b=1;
+for (i=1; i<=n; i++)
+{
+  printf("%d\n", a);
+  result= a+b;
+  a=b;
+  b=result;
+}
+}
+*/
+
+//***************************************************
+// Floyd's Triangle in C//
+/*
+#include <stdio.h>
+int main ()
+{
+int i,j,rows,n=1;
+printf("enter the number of rows");
+scanf("%d", &rows);
+for(i=1; j<=rows; i++)
+{
+  for(j=1; j<=i; j++)
+  {
+    printf("%d", n);
+    n++;
+  }
+  printf("\n");
+}
+return 0;
+  }
+  */
+
+//***************************************************
+  
